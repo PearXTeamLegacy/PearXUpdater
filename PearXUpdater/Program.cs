@@ -32,7 +32,7 @@ namespace PearXUpdater
             foreach (string str in info.Skip(2))
             {
                 File.Delete(str);
-                File.Move("new." + str, str);
+                File.Move(Path.GetDirectoryName(str) + "/new." + Path.GetFileName(str), str);
             }
             Process.Start(info[1]);
         }
